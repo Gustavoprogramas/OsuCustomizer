@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pnlStable = new Panel();
             numWhite = new NumericUpDown();
             numSizeDecay = new NumericUpDown();
@@ -55,13 +56,13 @@
             trackBarDecay = new TrackBar();
             trackBarBlur = new TrackBar();
             trackBarOpacity = new TrackBar();
-            btnMenuStable = new Button();
-            btnMenuBlur = new Button();
             pnlBlur = new Panel();
             numBlurIntensity = new NumericUpDown();
             trackBarBlurIntensity = new TrackBar();
             chkMotionBlur = new CheckBox();
             label7 = new Label();
+            btnMenuStable = new BotaoArredondado();
+            btnMenuBlur = new BotaoArredondado();
             pnlStable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numWhite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numSizeDecay).BeginInit();
@@ -82,6 +83,7 @@
             // 
             // pnlStable
             // 
+            pnlStable.BackColor = Color.Transparent;
             pnlStable.Controls.Add(numWhite);
             pnlStable.Controls.Add(numSizeDecay);
             pnlStable.Controls.Add(numDecay);
@@ -108,14 +110,14 @@
             pnlStable.Controls.Add(trackBarDecay);
             pnlStable.Controls.Add(trackBarBlur);
             pnlStable.Controls.Add(trackBarOpacity);
-            pnlStable.Location = new Point(218, 22);
+            pnlStable.Location = new Point(86, 0);
             pnlStable.Name = "pnlStable";
-            pnlStable.Size = new Size(656, 533);
+            pnlStable.Size = new Size(500, 500);
             pnlStable.TabIndex = 22;
             // 
             // numWhite
             // 
-            numWhite.Location = new Point(315, 443);
+            numWhite.Location = new Point(291, 443);
             numWhite.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numWhite.Name = "numWhite";
             numWhite.Size = new Size(37, 23);
@@ -125,7 +127,7 @@
             // 
             // numSizeDecay
             // 
-            numSizeDecay.Location = new Point(315, 392);
+            numSizeDecay.Location = new Point(291, 392);
             numSizeDecay.Minimum = new decimal(new int[] { 50, 0, 0, int.MinValue });
             numSizeDecay.Name = "numSizeDecay";
             numSizeDecay.Size = new Size(37, 23);
@@ -134,7 +136,7 @@
             // 
             // numDecay
             // 
-            numDecay.Location = new Point(315, 341);
+            numDecay.Location = new Point(291, 341);
             numDecay.Maximum = new decimal(new int[] { 150, 0, 0, 0 });
             numDecay.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numDecay.Name = "numDecay";
@@ -145,7 +147,7 @@
             // 
             // numOpacity
             // 
-            numOpacity.Location = new Point(315, 290);
+            numOpacity.Location = new Point(291, 290);
             numOpacity.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             numOpacity.Name = "numOpacity";
             numOpacity.Size = new Size(37, 23);
@@ -154,7 +156,7 @@
             // 
             // numBarBlur
             // 
-            numBarBlur.Location = new Point(315, 239);
+            numBarBlur.Location = new Point(285, 239);
             numBarBlur.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             numBarBlur.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numBarBlur.Name = "numBarBlur";
@@ -165,7 +167,7 @@
             // 
             // numTrail
             // 
-            numTrail.Location = new Point(315, 197);
+            numTrail.Location = new Point(285, 188);
             numTrail.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             numTrail.Name = "numTrail";
             numTrail.Size = new Size(37, 23);
@@ -182,7 +184,7 @@
             btnInjetar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnInjetar.FlatStyle = FlatStyle.Flat;
             btnInjetar.ForeColor = SystemColors.ControlText;
-            btnInjetar.Location = new Point(39, 37);
+            btnInjetar.Location = new Point(29, 12);
             btnInjetar.Margin = new Padding(0);
             btnInjetar.Name = "btnInjetar";
             btnInjetar.Size = new Size(172, 38);
@@ -194,7 +196,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(358, 443);
+            label6.Location = new Point(334, 443);
             label6.Name = "label6";
             label6.Size = new Size(153, 15);
             label6.TabIndex = 41;
@@ -203,7 +205,7 @@
             // chkUseImages
             // 
             chkUseImages.AutoSize = true;
-            chkUseImages.Location = new Point(426, 56);
+            chkUseImages.Location = new Point(397, 47);
             chkUseImages.Name = "chkUseImages";
             chkUseImages.Size = new Size(81, 19);
             chkUseImages.TabIndex = 23;
@@ -213,7 +215,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(358, 392);
+            label5.Location = new Point(334, 392);
             label5.Name = "label5";
             label5.Size = new Size(127, 15);
             label5.TabIndex = 40;
@@ -221,7 +223,7 @@
             // 
             // btnImgCursor
             // 
-            btnImgCursor.Location = new Point(349, 105);
+            btnImgCursor.Location = new Point(375, 71);
             btnImgCursor.Name = "btnImgCursor";
             btnImgCursor.Size = new Size(110, 36);
             btnImgCursor.TabIndex = 24;
@@ -231,7 +233,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(358, 341);
+            label4.Location = new Point(334, 341);
             label4.Name = "label4";
             label4.Size = new Size(120, 15);
             label4.TabIndex = 39;
@@ -239,7 +241,7 @@
             // 
             // btnImgTrail
             // 
-            btnImgTrail.Location = new Point(465, 105);
+            btnImgTrail.Location = new Point(375, 113);
             btnImgTrail.Name = "btnImgTrail";
             btnImgTrail.Size = new Size(110, 36);
             btnImgTrail.TabIndex = 25;
@@ -249,7 +251,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(358, 290);
+            label3.Location = new Point(334, 290);
             label3.Name = "label3";
             label3.Size = new Size(118, 15);
             label3.TabIndex = 38;
@@ -267,7 +269,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(358, 239);
+            label2.Location = new Point(328, 239);
             label2.Name = "label2";
             label2.Size = new Size(127, 15);
             label2.TabIndex = 37;
@@ -285,7 +287,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(358, 199);
+            label1.Location = new Point(328, 190);
             label1.Name = "label1";
             label1.Size = new Size(113, 15);
             label1.TabIndex = 36;
@@ -304,7 +306,7 @@
             // 
             // trackBarWhite
             // 
-            trackBarWhite.Location = new Point(39, 443);
+            trackBarWhite.Location = new Point(15, 443);
             trackBarWhite.Maximum = 100;
             trackBarWhite.Minimum = 1;
             trackBarWhite.Name = "trackBarWhite";
@@ -324,7 +326,7 @@
             // 
             // trackBarSizeDecay
             // 
-            trackBarSizeDecay.Location = new Point(39, 392);
+            trackBarSizeDecay.Location = new Point(15, 392);
             trackBarSizeDecay.Maximum = 100;
             trackBarSizeDecay.Minimum = -50;
             trackBarSizeDecay.Name = "trackBarSizeDecay";
@@ -334,7 +336,7 @@
             // 
             // trackBarTrail
             // 
-            trackBarTrail.Location = new Point(39, 198);
+            trackBarTrail.Location = new Point(9, 189);
             trackBarTrail.Maximum = 500;
             trackBarTrail.Name = "trackBarTrail";
             trackBarTrail.Size = new Size(270, 45);
@@ -343,7 +345,7 @@
             // 
             // trackBarDecay
             // 
-            trackBarDecay.Location = new Point(39, 341);
+            trackBarDecay.Location = new Point(15, 341);
             trackBarDecay.Maximum = 150;
             trackBarDecay.Minimum = 1;
             trackBarDecay.Name = "trackBarDecay";
@@ -353,7 +355,7 @@
             // 
             // trackBarBlur
             // 
-            trackBarBlur.Location = new Point(39, 239);
+            trackBarBlur.Location = new Point(9, 239);
             trackBarBlur.Maximum = 300;
             trackBarBlur.Minimum = 1;
             trackBarBlur.Name = "trackBarBlur";
@@ -364,47 +366,28 @@
             // 
             // trackBarOpacity
             // 
-            trackBarOpacity.Location = new Point(39, 290);
+            trackBarOpacity.Location = new Point(15, 290);
             trackBarOpacity.Maximum = 255;
             trackBarOpacity.Name = "trackBarOpacity";
             trackBarOpacity.Size = new Size(270, 45);
             trackBarOpacity.TabIndex = 32;
             trackBarOpacity.Value = 1;
             // 
-            // btnMenuStable
-            // 
-            btnMenuStable.Location = new Point(12, 12);
-            btnMenuStable.Name = "btnMenuStable";
-            btnMenuStable.Size = new Size(125, 63);
-            btnMenuStable.TabIndex = 22;
-            btnMenuStable.Text = "Stable Cursor";
-            btnMenuStable.UseVisualStyleBackColor = true;
-            btnMenuStable.Click += btnMenuStable_Click;
-            // 
-            // btnMenuBlur
-            // 
-            btnMenuBlur.Location = new Point(12, 96);
-            btnMenuBlur.Name = "btnMenuBlur";
-            btnMenuBlur.Size = new Size(125, 63);
-            btnMenuBlur.TabIndex = 23;
-            btnMenuBlur.Text = "Stable Blur";
-            btnMenuBlur.UseVisualStyleBackColor = true;
-            btnMenuBlur.Click += btnMenuBlur_Click;
-            // 
             // pnlBlur
             // 
+            pnlBlur.BackColor = Color.Transparent;
             pnlBlur.Controls.Add(numBlurIntensity);
             pnlBlur.Controls.Add(trackBarBlurIntensity);
             pnlBlur.Controls.Add(chkMotionBlur);
             pnlBlur.Controls.Add(label7);
-            pnlBlur.Location = new Point(196, 55);
+            pnlBlur.Location = new Point(83, 3);
             pnlBlur.Name = "pnlBlur";
-            pnlBlur.Size = new Size(656, 533);
+            pnlBlur.Size = new Size(500, 500);
             pnlBlur.TabIndex = 23;
             // 
             // numBlurIntensity
             // 
-            numBlurIntensity.Location = new Point(533, 144);
+            numBlurIntensity.Location = new Point(408, 165);
             numBlurIntensity.Name = "numBlurIntensity";
             numBlurIntensity.Size = new Size(39, 23);
             numBlurIntensity.TabIndex = 23;
@@ -412,7 +395,8 @@
             // 
             // trackBarBlurIntensity
             // 
-            trackBarBlurIntensity.Location = new Point(177, 146);
+            trackBarBlurIntensity.BackColor = SystemColors.AppWorkspace;
+            trackBarBlurIntensity.Location = new Point(46, 165);
             trackBarBlurIntensity.Maximum = 100;
             trackBarBlurIntensity.Name = "trackBarBlurIntensity";
             trackBarBlurIntensity.Size = new Size(350, 45);
@@ -422,34 +406,76 @@
             // chkMotionBlur
             // 
             chkMotionBlur.AutoSize = true;
-            chkMotionBlur.Location = new Point(278, 110);
+            chkMotionBlur.Font = new Font("Segoe UI", 14F);
+            chkMotionBlur.ForeColor = SystemColors.ButtonFace;
+            chkMotionBlur.Location = new Point(68, 66);
             chkMotionBlur.Name = "chkMotionBlur";
-            chkMotionBlur.Size = new Size(123, 19);
+            chkMotionBlur.Size = new Size(185, 29);
             chkMotionBlur.TabIndex = 3;
             chkMotionBlur.Text = "Ativar Motion Blur";
             chkMotionBlur.UseVisualStyleBackColor = true;
+            chkMotionBlur.CheckedChanged += chkMotionBlur_CheckedChanged_1;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(68, 146);
+            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(46, 121);
             label7.Name = "label7";
-            label7.Size = new Size(109, 15);
+            label7.Size = new Size(187, 25);
             label7.TabIndex = 5;
             label7.Text = "Intensidade do Blur";
+            // 
+            // btnMenuStable
+            // 
+            btnMenuStable.BackColor = SystemColors.ButtonShadow;
+            btnMenuStable.FlatAppearance.BorderColor = Color.Gray;
+            btnMenuStable.FlatAppearance.BorderSize = 0;
+            btnMenuStable.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnMenuStable.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnMenuStable.FlatStyle = FlatStyle.Flat;
+            btnMenuStable.Font = new Font("Segoe UI", 8F);
+            btnMenuStable.Location = new Point(9, 20);
+            btnMenuStable.Name = "btnMenuStable";
+            btnMenuStable.Size = new Size(65, 36);
+            btnMenuStable.TabIndex = 24;
+            btnMenuStable.Text = "Stable cursor";
+            btnMenuStable.UseVisualStyleBackColor = false;
+            btnMenuStable.Click += btnMenuStable_Click;
+            // 
+            // btnMenuBlur
+            // 
+            btnMenuBlur.BackColor = SystemColors.ButtonShadow;
+            btnMenuBlur.FlatAppearance.BorderColor = Color.Gray;
+            btnMenuBlur.FlatAppearance.BorderSize = 0;
+            btnMenuBlur.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnMenuBlur.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnMenuBlur.FlatStyle = FlatStyle.Flat;
+            btnMenuBlur.Font = new Font("Segoe UI", 8F);
+            btnMenuBlur.Location = new Point(9, 62);
+            btnMenuBlur.Name = "btnMenuBlur";
+            btnMenuBlur.Size = new Size(65, 36);
+            btnMenuBlur.TabIndex = 25;
+            btnMenuBlur.Text = "Stable blur";
+            btnMenuBlur.UseVisualStyleBackColor = false;
+            btnMenuBlur.Click += btnMenuBlur_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(800, 804);
+            BackColor = Color.Gray;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(584, 561);
             Controls.Add(btnMenuBlur);
             Controls.Add(btnMenuStable);
-            Controls.Add(pnlStable);
             Controls.Add(pnlBlur);
+            Controls.Add(pnlStable);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Osu Custom Trail Builder";
             Load += Form1_Load;
             pnlStable.ResumeLayout(false);
             pnlStable.PerformLayout();
@@ -475,8 +501,6 @@
         #endregion
         private Button btnInjetarLazer_Click;
         private Panel pnlStable;
-        private Button btnMenuStable;
-        private Button btnMenuBlur;
         private Button btnInjetar;
         private Label label6;
         private CheckBox chkUseImages;
@@ -508,5 +532,7 @@
         private NumericUpDown numDecay;
         private NumericUpDown numOpacity;
         private NumericUpDown numBarBlur;
+        private BotaoArredondado btnMenuStable;
+        private BotaoArredondado btnMenuBlur;
     }
 }

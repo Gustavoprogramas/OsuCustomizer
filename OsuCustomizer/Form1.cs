@@ -20,21 +20,21 @@ namespace OsuCustomizer
         {
             InitializeComponent();
 
-           
 
-            
+
+
             btnCorCursor.Click += btnCorCursor_Click;
             btnCorTrail.Click += btnCorTrail_Click;
             btnImgCursor.Click += btnImgCursor_Click;
             btnImgTrail.Click += btnImgTrail_Click;
 
-          
+
             chkUseImages.CheckedChanged += chkUseImages_CheckedChanged;
             chkBloom.CheckedChanged += chkBloom_CheckedChanged;
             chkWhiteCenter.CheckedChanged += chkWhiteCenter_CheckedChanged;
             if (chkMotionBlur != null) chkMotionBlur.CheckedChanged += chkMotionBlur_CheckedChanged;
 
-           
+
             trackBarTrail.Scroll += trackBarTrail_Scroll_1;
             trackBarBlur.Scroll += trackBarBlur_Scroll;
             trackBarOpacity.Scroll += trackBarOpacity_Scroll;
@@ -70,7 +70,7 @@ namespace OsuCustomizer
                 cursor_image_path = "",
                 trail_image_path = "",
                 enable_motion_blur = false,
-                blur_intensity = 0.5f 
+                blur_intensity = 0.5f
             };
 
             UpdateUIFromSettings();
@@ -127,7 +127,7 @@ namespace OsuCustomizer
             chkBloom.Checked = _currentSettings.enable_glow;
             chkWhiteCenter.Checked = _currentSettings.enable_white_center;
 
-           
+
             if (chkMotionBlur != null) chkMotionBlur.Checked = _currentSettings.enable_motion_blur;
             if (trackBarBlurIntensity != null) trackBarBlurIntensity.Value = Math.Clamp((int)(_currentSettings.blur_intensity * 100), trackBarBlurIntensity.Minimum, trackBarBlurIntensity.Maximum);
         }
@@ -153,7 +153,7 @@ namespace OsuCustomizer
             }
         }
 
-       
+
         private void InjetarDLL(string nomeDaDll)
         {
             string dllPath = Path.GetFullPath(nomeDaDll);
@@ -165,7 +165,7 @@ namespace OsuCustomizer
                 psi.FileName = injetorPath;
                 psi.Arguments = $"\"{dllPath}\"";
                 psi.UseShellExecute = true;
-                psi.Verb = "runas"; 
+                psi.Verb = "runas";
 
                 using (Process proc = Process.Start(psi))
                 {
@@ -190,13 +190,13 @@ namespace OsuCustomizer
         {
             try
             {
-                
+
                 InjetarDLL("dlldinamica.dll");
 
-                
+
                 System.Threading.Thread.Sleep(500);
 
-                
+
                 InjetarDLL("MotionBlur.dll");
 
                 MessageBox.Show("SUCESSO!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -298,12 +298,7 @@ namespace OsuCustomizer
             }
         }
 
-        private void btnMenuStable_Click(object sender, EventArgs e)
-        {
 
-
-            MostrarPainel(pnlStable);
-        }
         private void btnMenuBlur_Click(object sender, EventArgs e) { MostrarPainel(pnlBlur); }
 
 
@@ -312,17 +307,17 @@ namespace OsuCustomizer
 
         private void trackBarBlurIntensity_Scroll(object sender, EventArgs e)
         {
-            
+
             numBlurIntensity.Value = trackBarBlurIntensity.Value;
 
             _currentSettings.blur_intensity = trackBarBlurIntensity.Value / 100.0f;
             UpdateSharedMemory();
         }
 
-       
+
         private void numBlurIntensity_ValueChanged(object sender, EventArgs e)
         {
-            
+
             trackBarBlurIntensity.Value = (int)numBlurIntensity.Value;
 
             _currentSettings.blur_intensity = trackBarBlurIntensity.Value / 100.0f;
@@ -424,6 +419,21 @@ namespace OsuCustomizer
             trackBarWhite.Value = (int)numWhite.Value;
             _currentSettings.white_center_ratio = trackBarWhite.Value / 100.0f;
             UpdateSharedMemory();
+        }
+
+        private void chkMotionBlur_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuStable_Click(object sender, EventArgs e)
+        {
+            MostrarPainel(pnlStable);
+        }
+
+        private void btnMenuBlur_Click_1(object sender, EventArgs e)
+        {
+            MostrarPainel(pnlBlur);
         }
     }
 }
