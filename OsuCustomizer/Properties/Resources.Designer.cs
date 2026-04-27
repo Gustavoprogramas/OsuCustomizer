@@ -63,6 +63,36 @@ namespace OsuCustomizer.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botão_110x36 {
+            get {
+                object obj = ResourceManager.GetObject("botão 110x36", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botão_172x38 {
+            get {
+                object obj = ResourceManager.GetObject("botão 172x38", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botão_65x36 {
+            get {
+                object obj = ResourceManager.GetObject("botão 65x36", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gemini_Generated_Image_nsfio5nsfio5nsfi {
             get {
                 object obj = ResourceManager.GetObject("Gemini_Generated_Image_nsfio5nsfio5nsfi", resourceCulture);

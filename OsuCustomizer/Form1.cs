@@ -435,5 +435,57 @@ namespace OsuCustomizer
         {
             MostrarPainel(pnlBlur);
         }
+
+        private void btnPanelLzr_Click(object sender, EventArgs e)
+        {
+            MostrarPainel(pnlLazerDX11);
+        }
+
+        private void btnInjetarLazerDX11_Click(object sender, EventArgs e)
+        {
+            string dllPath = Path.GetFullPath("osulazerdx11.dll");
+            string injetorPath = Path.GetFullPath("injetor64.exe");
+
+            if (File.Exists(injetorPath) && File.Exists(dllPath))
+            {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = injetorPath;
+                psi.Arguments = $"\"{dllPath}\""; // Passa a DLL de forma invisível
+                psi.UseShellExecute = true;
+                psi.Verb = "runas"; // Pede permissão de Administrador
+
+                // Se usar UseShellExecute = false, daria pra esconder a janela do CMD 100%, 
+                // mas o 'runas' obriga a ser true. A janela preta vai piscar por 0.1s e fechar.
+
+                using (Process proc = Process.Start(psi))
+                {
+                    proc.WaitForExit();
+                    int exitCode = proc.ExitCode;
+
+                    // Lendo a resposta silenciosa do injetor64.exe
+                    if (exitCode == 0)
+                    {
+                        MessageBox.Show("SUCESSO!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (exitCode == 2)
+                    {
+                        MessageBox.Show("OSU! LAZER NÃO ENCONTRADO!\n\nAbra o jogo primeiro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"FALHA NA INJEÇÃO Código: {exitCode})", "Erro Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("A DLL 'osulazerdx11.dll' ou o 'injetor64.exe' não foram encontrados!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnInjetarOpenGL_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("EM DESENVOLVIMENTO, USE DX11!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

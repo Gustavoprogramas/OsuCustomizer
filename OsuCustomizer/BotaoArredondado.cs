@@ -10,7 +10,7 @@ namespace OsuCustomizer
         {
             base.OnPaint(pevent);
             GraphicsPath path = new GraphicsPath();
-            int radius = 20; // <--- CONTROLADOR DO ARREDONDAMENTO
+            int radius = 1; // <--- CONTROLADOR DO ARREDONDAMENTO
 
             
             path.AddArc(0, 0, radius, radius, 180, 90);

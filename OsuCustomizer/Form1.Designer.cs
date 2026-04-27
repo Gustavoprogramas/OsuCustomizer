@@ -63,6 +63,10 @@
             label7 = new Label();
             btnMenuStable = new BotaoArredondado();
             btnMenuBlur = new BotaoArredondado();
+            btnPanelLzr = new BotaoArredondado();
+            pnlLazerDX11 = new Panel();
+            btnInjetarOpenGL = new Button();
+            btnInjetarLazerDX11 = new Button();
             pnlStable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numWhite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numSizeDecay).BeginInit();
@@ -79,6 +83,7 @@
             pnlBlur.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numBlurIntensity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarBlurIntensity).BeginInit();
+            pnlLazerDX11.SuspendLayout();
             SuspendLayout();
             // 
             // pnlStable
@@ -110,14 +115,14 @@
             pnlStable.Controls.Add(trackBarDecay);
             pnlStable.Controls.Add(trackBarBlur);
             pnlStable.Controls.Add(trackBarOpacity);
-            pnlStable.Location = new Point(86, 0);
+            pnlStable.Location = new Point(82, 0);
             pnlStable.Name = "pnlStable";
             pnlStable.Size = new Size(500, 500);
             pnlStable.TabIndex = 22;
             // 
             // numWhite
             // 
-            numWhite.Location = new Point(291, 443);
+            numWhite.Location = new Point(285, 443);
             numWhite.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numWhite.Name = "numWhite";
             numWhite.Size = new Size(37, 23);
@@ -127,7 +132,7 @@
             // 
             // numSizeDecay
             // 
-            numSizeDecay.Location = new Point(291, 392);
+            numSizeDecay.Location = new Point(285, 392);
             numSizeDecay.Minimum = new decimal(new int[] { 50, 0, 0, int.MinValue });
             numSizeDecay.Name = "numSizeDecay";
             numSizeDecay.Size = new Size(37, 23);
@@ -136,7 +141,7 @@
             // 
             // numDecay
             // 
-            numDecay.Location = new Point(291, 341);
+            numDecay.Location = new Point(285, 341);
             numDecay.Maximum = new decimal(new int[] { 150, 0, 0, 0 });
             numDecay.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numDecay.Name = "numDecay";
@@ -147,7 +152,7 @@
             // 
             // numOpacity
             // 
-            numOpacity.Location = new Point(291, 290);
+            numOpacity.Location = new Point(285, 290);
             numOpacity.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             numOpacity.Name = "numOpacity";
             numOpacity.Size = new Size(37, 23);
@@ -176,14 +181,17 @@
             // 
             // btnInjetar
             // 
-            btnInjetar.BackColor = Color.DarkGray;
-            btnInjetar.BackgroundImageLayout = ImageLayout.Center;
+            btnInjetar.BackColor = Color.MediumBlue;
+            btnInjetar.BackgroundImageLayout = ImageLayout.Zoom;
             btnInjetar.Cursor = Cursors.Hand;
             btnInjetar.FlatAppearance.BorderColor = Color.Silver;
+            btnInjetar.FlatAppearance.BorderSize = 0;
             btnInjetar.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 64, 64);
             btnInjetar.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             btnInjetar.FlatStyle = FlatStyle.Flat;
-            btnInjetar.ForeColor = SystemColors.ControlText;
+            btnInjetar.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold);
+            btnInjetar.ForeColor = SystemColors.Control;
+            btnInjetar.Image = Properties.Resources.botão_172x38;
             btnInjetar.Location = new Point(29, 12);
             btnInjetar.Margin = new Padding(0);
             btnInjetar.Name = "btnInjetar";
@@ -196,9 +204,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(334, 443);
+            label6.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(325, 445);
             label6.Name = "label6";
-            label6.Size = new Size(153, 15);
+            label6.Size = new Size(172, 15);
             label6.TabIndex = 41;
             label6.Text = "<- Tamanho da bola branca";
             // 
@@ -215,81 +225,127 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(334, 392);
             label5.Name = "label5";
-            label5.Size = new Size(127, 15);
+            label5.Size = new Size(146, 15);
             label5.TabIndex = 40;
             label5.Text = "<- Afinamento do Trail";
             // 
             // btnImgCursor
             // 
+            btnImgCursor.BackColor = Color.Black;
+            btnImgCursor.BackgroundImage = Properties.Resources.botão_110x36;
+            btnImgCursor.Cursor = Cursors.Hand;
+            btnImgCursor.FlatAppearance.BorderColor = Color.Blue;
+            btnImgCursor.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 0, 64);
+            btnImgCursor.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 0, 64);
+            btnImgCursor.FlatStyle = FlatStyle.Flat;
+            btnImgCursor.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            btnImgCursor.ForeColor = SystemColors.Control;
             btnImgCursor.Location = new Point(375, 71);
             btnImgCursor.Name = "btnImgCursor";
             btnImgCursor.Size = new Size(110, 36);
             btnImgCursor.TabIndex = 24;
             btnImgCursor.Text = "Cursor.png";
-            btnImgCursor.UseVisualStyleBackColor = true;
+            btnImgCursor.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(334, 341);
             label4.Name = "label4";
-            label4.Size = new Size(120, 15);
+            label4.Size = new Size(138, 15);
             label4.TabIndex = 39;
             label4.Text = "<- Velocidade do trail";
             // 
             // btnImgTrail
             // 
+            btnImgTrail.BackColor = Color.Black;
+            btnImgTrail.BackgroundImage = Properties.Resources.botão_110x36;
+            btnImgTrail.Cursor = Cursors.Hand;
+            btnImgTrail.FlatAppearance.BorderColor = Color.Blue;
+            btnImgTrail.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 0, 64);
+            btnImgTrail.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 0, 64);
+            btnImgTrail.FlatStyle = FlatStyle.Flat;
+            btnImgTrail.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            btnImgTrail.ForeColor = SystemColors.Control;
             btnImgTrail.Location = new Point(375, 113);
             btnImgTrail.Name = "btnImgTrail";
             btnImgTrail.Size = new Size(110, 36);
             btnImgTrail.TabIndex = 25;
             btnImgTrail.Text = "Cursortrail.png";
-            btnImgTrail.UseVisualStyleBackColor = true;
+            btnImgTrail.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(334, 290);
+            label3.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(328, 290);
             label3.Name = "label3";
-            label3.Size = new Size(118, 15);
+            label3.Size = new Size(131, 15);
             label3.TabIndex = 38;
             label3.Text = "<- Opacidade Cursor";
             // 
             // btnCorCursor
             // 
+            btnCorCursor.BackColor = Color.Black;
+            btnCorCursor.BackgroundImage = Properties.Resources.botão_110x36;
+            btnCorCursor.Cursor = Cursors.Hand;
+            btnCorCursor.FlatAppearance.BorderColor = Color.Blue;
+            btnCorCursor.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 0, 64);
+            btnCorCursor.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 0, 64);
+            btnCorCursor.FlatStyle = FlatStyle.Flat;
+            btnCorCursor.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            btnCorCursor.ForeColor = SystemColors.Control;
             btnCorCursor.Location = new Point(39, 105);
             btnCorCursor.Name = "btnCorCursor";
             btnCorCursor.Size = new Size(110, 36);
             btnCorCursor.TabIndex = 26;
             btnCorCursor.Text = "Cor do Cursor";
-            btnCorCursor.UseVisualStyleBackColor = true;
+            btnCorCursor.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(328, 239);
             label2.Name = "label2";
-            label2.Size = new Size(127, 15);
+            label2.Size = new Size(142, 15);
             label2.TabIndex = 37;
             label2.Text = "<- Tamanho do Cursor";
             // 
             // btnCorTrail
             // 
+            btnCorTrail.BackColor = Color.Black;
+            btnCorTrail.BackgroundImage = Properties.Resources.botão_110x36;
+            btnCorTrail.Cursor = Cursors.Hand;
+            btnCorTrail.FlatAppearance.BorderColor = Color.Blue;
+            btnCorTrail.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 0, 64);
+            btnCorTrail.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 0, 64);
+            btnCorTrail.FlatStyle = FlatStyle.Flat;
+            btnCorTrail.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            btnCorTrail.ForeColor = SystemColors.Control;
             btnCorTrail.Location = new Point(155, 105);
             btnCorTrail.Name = "btnCorTrail";
             btnCorTrail.Size = new Size(110, 36);
             btnCorTrail.TabIndex = 27;
             btnCorTrail.Text = "Cor do Trail";
-            btnCorTrail.UseVisualStyleBackColor = true;
+            btnCorTrail.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(328, 190);
             label1.Name = "label1";
-            label1.Size = new Size(113, 15);
+            label1.Size = new Size(130, 15);
             label1.TabIndex = 36;
             label1.Text = "<- Tamanho do Trail";
             label1.Click += label1_Click;
@@ -306,7 +362,7 @@
             // 
             // trackBarWhite
             // 
-            trackBarWhite.Location = new Point(15, 443);
+            trackBarWhite.Location = new Point(9, 443);
             trackBarWhite.Maximum = 100;
             trackBarWhite.Minimum = 1;
             trackBarWhite.Name = "trackBarWhite";
@@ -326,7 +382,7 @@
             // 
             // trackBarSizeDecay
             // 
-            trackBarSizeDecay.Location = new Point(15, 392);
+            trackBarSizeDecay.Location = new Point(9, 392);
             trackBarSizeDecay.Maximum = 100;
             trackBarSizeDecay.Minimum = -50;
             trackBarSizeDecay.Name = "trackBarSizeDecay";
@@ -345,7 +401,7 @@
             // 
             // trackBarDecay
             // 
-            trackBarDecay.Location = new Point(15, 341);
+            trackBarDecay.Location = new Point(9, 341);
             trackBarDecay.Maximum = 150;
             trackBarDecay.Minimum = 1;
             trackBarDecay.Name = "trackBarDecay";
@@ -366,7 +422,7 @@
             // 
             // trackBarOpacity
             // 
-            trackBarOpacity.Location = new Point(15, 290);
+            trackBarOpacity.Location = new Point(9, 290);
             trackBarOpacity.Maximum = 255;
             trackBarOpacity.Name = "trackBarOpacity";
             trackBarOpacity.Size = new Size(270, 45);
@@ -380,7 +436,7 @@
             pnlBlur.Controls.Add(trackBarBlurIntensity);
             pnlBlur.Controls.Add(chkMotionBlur);
             pnlBlur.Controls.Add(label7);
-            pnlBlur.Location = new Point(83, 3);
+            pnlBlur.Location = new Point(82, 0);
             pnlBlur.Name = "pnlBlur";
             pnlBlur.Size = new Size(500, 500);
             pnlBlur.TabIndex = 23;
@@ -430,12 +486,15 @@
             // btnMenuStable
             // 
             btnMenuStable.BackColor = SystemColors.ButtonShadow;
+            btnMenuStable.BackgroundImage = Properties.Resources.botão_65x36;
+            btnMenuStable.Cursor = Cursors.Hand;
             btnMenuStable.FlatAppearance.BorderColor = Color.Gray;
             btnMenuStable.FlatAppearance.BorderSize = 0;
             btnMenuStable.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnMenuStable.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnMenuStable.FlatStyle = FlatStyle.Flat;
-            btnMenuStable.Font = new Font("Segoe UI", 8F);
+            btnMenuStable.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMenuStable.ForeColor = SystemColors.Control;
             btnMenuStable.Location = new Point(9, 20);
             btnMenuStable.Name = "btnMenuStable";
             btnMenuStable.Size = new Size(65, 36);
@@ -447,12 +506,15 @@
             // btnMenuBlur
             // 
             btnMenuBlur.BackColor = SystemColors.ButtonShadow;
+            btnMenuBlur.BackgroundImage = Properties.Resources.botão_65x36;
+            btnMenuBlur.Cursor = Cursors.Hand;
             btnMenuBlur.FlatAppearance.BorderColor = Color.Gray;
             btnMenuBlur.FlatAppearance.BorderSize = 0;
             btnMenuBlur.FlatAppearance.MouseDownBackColor = Color.Gray;
             btnMenuBlur.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnMenuBlur.FlatStyle = FlatStyle.Flat;
-            btnMenuBlur.Font = new Font("Segoe UI", 8F);
+            btnMenuBlur.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold);
+            btnMenuBlur.ForeColor = SystemColors.ButtonHighlight;
             btnMenuBlur.Location = new Point(9, 62);
             btnMenuBlur.Name = "btnMenuBlur";
             btnMenuBlur.Size = new Size(65, 36);
@@ -460,6 +522,80 @@
             btnMenuBlur.Text = "Stable blur";
             btnMenuBlur.UseVisualStyleBackColor = false;
             btnMenuBlur.Click += btnMenuBlur_Click;
+            // 
+            // btnPanelLzr
+            // 
+            btnPanelLzr.BackColor = SystemColors.ButtonShadow;
+            btnPanelLzr.BackgroundImage = Properties.Resources.botão_65x36;
+            btnPanelLzr.Cursor = Cursors.Hand;
+            btnPanelLzr.FlatAppearance.BorderColor = Color.Gray;
+            btnPanelLzr.FlatAppearance.BorderSize = 0;
+            btnPanelLzr.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnPanelLzr.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnPanelLzr.FlatStyle = FlatStyle.Flat;
+            btnPanelLzr.Font = new Font("Segoe UI Black", 8.25F, FontStyle.Bold);
+            btnPanelLzr.ForeColor = SystemColors.ButtonHighlight;
+            btnPanelLzr.Location = new Point(9, 105);
+            btnPanelLzr.Name = "btnPanelLzr";
+            btnPanelLzr.Size = new Size(65, 36);
+            btnPanelLzr.TabIndex = 26;
+            btnPanelLzr.Text = "Lazer cursor";
+            btnPanelLzr.UseVisualStyleBackColor = false;
+            btnPanelLzr.Click += btnPanelLzr_Click;
+            // 
+            // pnlLazerDX11
+            // 
+            pnlLazerDX11.BackColor = Color.Transparent;
+            pnlLazerDX11.Controls.Add(btnInjetarOpenGL);
+            pnlLazerDX11.Controls.Add(btnInjetarLazerDX11);
+            pnlLazerDX11.Location = new Point(82, 0);
+            pnlLazerDX11.Name = "pnlLazerDX11";
+            pnlLazerDX11.Size = new Size(500, 500);
+            pnlLazerDX11.TabIndex = 27;
+            // 
+            // btnInjetarOpenGL
+            // 
+            btnInjetarOpenGL.BackColor = Color.MediumBlue;
+            btnInjetarOpenGL.BackgroundImageLayout = ImageLayout.Zoom;
+            btnInjetarOpenGL.Cursor = Cursors.Hand;
+            btnInjetarOpenGL.FlatAppearance.BorderColor = Color.Silver;
+            btnInjetarOpenGL.FlatAppearance.BorderSize = 0;
+            btnInjetarOpenGL.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 64, 64);
+            btnInjetarOpenGL.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnInjetarOpenGL.FlatStyle = FlatStyle.Flat;
+            btnInjetarOpenGL.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold);
+            btnInjetarOpenGL.ForeColor = SystemColors.Control;
+            btnInjetarOpenGL.Image = Properties.Resources.botão_172x38;
+            btnInjetarOpenGL.Location = new Point(291, 28);
+            btnInjetarOpenGL.Margin = new Padding(0);
+            btnInjetarOpenGL.Name = "btnInjetarOpenGL";
+            btnInjetarOpenGL.Size = new Size(172, 38);
+            btnInjetarOpenGL.TabIndex = 24;
+            btnInjetarOpenGL.Text = "Injetar OpenGL";
+            btnInjetarOpenGL.UseVisualStyleBackColor = false;
+            btnInjetarOpenGL.Click += btnInjetarOpenGL_Click;
+            // 
+            // btnInjetarLazerDX11
+            // 
+            btnInjetarLazerDX11.BackColor = Color.MediumBlue;
+            btnInjetarLazerDX11.BackgroundImageLayout = ImageLayout.Zoom;
+            btnInjetarLazerDX11.Cursor = Cursors.Hand;
+            btnInjetarLazerDX11.FlatAppearance.BorderColor = Color.Silver;
+            btnInjetarLazerDX11.FlatAppearance.BorderSize = 0;
+            btnInjetarLazerDX11.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 64, 64);
+            btnInjetarLazerDX11.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnInjetarLazerDX11.FlatStyle = FlatStyle.Flat;
+            btnInjetarLazerDX11.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold);
+            btnInjetarLazerDX11.ForeColor = SystemColors.Control;
+            btnInjetarLazerDX11.Image = Properties.Resources.botão_172x38;
+            btnInjetarLazerDX11.Location = new Point(34, 28);
+            btnInjetarLazerDX11.Margin = new Padding(0);
+            btnInjetarLazerDX11.Name = "btnInjetarLazerDX11";
+            btnInjetarLazerDX11.Size = new Size(172, 38);
+            btnInjetarLazerDX11.TabIndex = 23;
+            btnInjetarLazerDX11.Text = "Injetar DX11";
+            btnInjetarLazerDX11.UseVisualStyleBackColor = false;
+            btnInjetarLazerDX11.Click += btnInjetarLazerDX11_Click;
             // 
             // Form1
             // 
@@ -469,13 +605,15 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(584, 561);
+            Controls.Add(pnlLazerDX11);
+            Controls.Add(btnPanelLzr);
             Controls.Add(btnMenuBlur);
             Controls.Add(btnMenuStable);
             Controls.Add(pnlBlur);
             Controls.Add(pnlStable);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
-            Text = "Osu Custom Trail Builder";
+            Text = "q";
             Load += Form1_Load;
             pnlStable.ResumeLayout(false);
             pnlStable.PerformLayout();
@@ -495,6 +633,7 @@
             pnlBlur.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numBlurIntensity).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBarBlurIntensity).EndInit();
+            pnlLazerDX11.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -534,5 +673,9 @@
         private NumericUpDown numBarBlur;
         private BotaoArredondado btnMenuStable;
         private BotaoArredondado btnMenuBlur;
+        private BotaoArredondado btnPanelLzr;
+        private Panel pnlLazerDX11;
+        private Button btnInjetarLazerDX11;
+        private Button btnInjetarOpenGL;
     }
 }
