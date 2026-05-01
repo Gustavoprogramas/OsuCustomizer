@@ -1,0 +1,17 @@
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\bin\Debug\net10.0-windows\OsuCustomizer.exe
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\bin\Debug\net10.0-windows\OsuCustomizer.deps.json
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\bin\Debug\net10.0-windows\OsuCustomizer.runtimeconfig.json
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\bin\Debug\net10.0-windows\OsuCustomizer.dll
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\bin\Debug\net10.0-windows\OsuCustomizer.pdb
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.Form1.resources
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.Properties.Resources.resources
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.dll
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\refint\OsuCustomizer.dll
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.pdb
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\OsuCustomizer.genruntimeconfig.cache
+C:\Users\Usuario\source\repos\OsuCustomizer-master\OsuCustomizer\obj\Debug\net10.0-windows\ref\OsuCustomizer.dll
